@@ -5,8 +5,8 @@ x=zeros(nt,n);uk=zeros(nt,nu);
 t=zeros(nt,1);nseg=zeros(ntau,1);kk=1;
 for k=1:ntau
     % RK4
-    [ttmp,xtmp]=rk4_s(x0,u(k,:)’,tau(k+1)-tau(k),MDNS);
-    x0=xtmp(end,:)’;%warunek poczatkowy do nastepnego
+    [ttmp,xtmp]=rk4_s(x0,u(k,:)',tau(k+1)-tau(k),MDNS);
+    x0=xtmp(end,:)';%warunek poczatkowy do nastepnego
     ni=1+floor(MDNS*(tau(k+1)-tau(k)));%liczba krokow
     x(kk:kk+ni-1,:)=xtmp(1:end-1,:);%zapis x
     t(kk:kk+ni-1)=tau(k)+ttmp(1:end-1,:);%zapis t
