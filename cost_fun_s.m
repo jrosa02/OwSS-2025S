@@ -5,9 +5,9 @@ function [q,g]=cost_fun_s(u,tau,x0,xf,W,MDNS)
 % roznica pomiedzy stanem koncowym i docelowym
 dxend=(x(end,1:end)-xf')';
 % funkcja celu
-q= tau(end) + dxend' * W * dxend;
+q= tau(end) + dxend' * W * dxend + x(end, 7);
 if nargout>1
 %opcjonalne obliczenie gradientu
-g=get_grad_s(tau,u,x0,xf,W,MDNS);
+%g=get_grad_s(tau,u,x0,xf,W,MDNS);
 end
 g = zeros(6,6);

@@ -8,10 +8,10 @@ dx1=zeros(n,1);dx2=zeros(n,1);
 dx3=zeros(n,1);dx4=zeros(n,1);
 h_2=h/2;h_6=h/6;h_26=2*h_6;
 for i=1:nt
-dx1=rhs_s(tt,xtmp,u);tmp=xtmp+h_2*dx1;tt=tt+h_2;
-dx2=rhs_s(tt,tmp,u);tmp=xtmp+h_2*dx2;
-dx3=rhs_s(tt,tmp,u);tmp=xtmp+h*dx3;tt=tt+h_2;
-dx4=rhs_s(tt,tmp,u);
-xtmp=xtmp+h_6*(dx1+dx4)+h_26*(dx2+dx3);
-x(i+1,:)=xtmp';t(i+1)=tt;
+    dx1=rhs_s(tt,xtmp,u);tmp=xtmp+h_2*dx1;tt=tt+h_2;
+    dx2=rhs_s(tt,tmp,u);tmp=xtmp+h_2*dx2;
+    dx3=rhs_s(tt,tmp,u);tmp=xtmp+h*dx3;tt=tt+h_2;
+    dx4=rhs_s(tt,tmp,u);
+    xtmp=xtmp+h_6*(dx1+dx4)+h_26*(dx2+dx3);
+    x(i+1,:)=xtmp';t(i+1)=tt;
 end

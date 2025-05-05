@@ -26,7 +26,7 @@ function p = rk4p_s(pf, t, x, uk)
         h_6   = h / 6;
         h_26  = 2 * h_6;
         
-        dp1   = -rhs_s(tt, x(k, :)', uk(k+1, :)', ptmp);
+        dp1   = -prhs_s(tt, x(k, :)', uk(k+1, :)', ptmp);
         tmp   = ptmp + h_2 * dp1;
         tt    = tt + h_2;
         x05   = 0.5 * (x(k, :) + x(k+1, :))';
